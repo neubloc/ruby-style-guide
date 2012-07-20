@@ -173,21 +173,12 @@ You can generate a PDF or an HTML copy of this guide using
     end
     ```
 
-* Align the parameters of a method call if they span over multiple lines.
+* Align the parameters of a method call if they span over multiple lines. 
 
     ```Ruby
     # starting point (line is too long)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
-    end
-
-    # bad (normal indent)
-    def send_mail(source)
-      Mailer.deliver(
-        to: 'bob@example.com',
-        from: 'us@example.com',
-        subject: 'Important message',
-        body: source.text)
     end
 
     # bad (double indent)
@@ -199,12 +190,21 @@ You can generate a PDF or an HTML copy of this guide using
           body: source.text)
     end
 
-    # good
+    # bad
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com',
                      from: 'us@example.com',
                      subject: 'Important message',
                      body: source.text)
+    end
+    
+    # good 
+    def send_mail(source)
+      Mailer.deliver(
+        to: 'bob@example.com',
+        from: 'us@example.com',
+        subject: 'Important message',
+        body: source.text)
     end
     ```
 
